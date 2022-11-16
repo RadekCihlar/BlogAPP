@@ -41,6 +41,7 @@ body {
     width: 80%;
     margin: auto;
 
+
 }
 
 /* Header/Blog Title */
@@ -77,6 +78,7 @@ body {
     padding: 20px;
     margin-top: 20px;
     text-align: center;
+
 }
 
 .post h2 {
@@ -211,3 +213,21 @@ textarea {
 .align-center {
     text-align: center;
 }
+pre {
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+    text-align: justify;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+pree {
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+    text-align: justify;
+
+ }
