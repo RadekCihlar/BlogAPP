@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:/www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<div th:replace="/fragments/header :: header"></div>
+
+<H1>user update</H1>
+<table>
+    <thead>
+    <th>USERNAME |</th>
+    <th>ROLE |</th>
+    <th>ACTIONS</th>
+    <tbody>
+    <tr th:each="user : ${user}">
+        <td th:text="${user.username}"></td>
+        <td th:text="${user.authority.authority}"></td>
+        <td>
+            <a th:href="@{/userUpdate/{id}(id=${user.getId()})}">Update Role</a>
+        </td>
+    </tr>
+    </tbody>
+    </thead>
+</table>
+</body>
+</html>
