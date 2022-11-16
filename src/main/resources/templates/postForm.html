@@ -26,17 +26,28 @@
         <textarea th:field="*{text}" placeholder="Write something valuable"></textarea>
       </label>
     </div>
-    <div class="float-left">
-      <button class="green-btn" type="submit">Send</button>
-    </div>
-  </form>
-  <div class="float-right" th:if="${post.id}">
-    <a th:data-confirm-delete="|Are you sure you want to delete this post ${post}?|"
+
+
+
+    <button class="green-btn" type="submit">Post it!</button>
+
+
+
+    <a th:if="${post.id}"
+
+       th:data-confirm-delete="|Are you sure you want to delete this post ${post}?|"
+
        onclick="if (!confirm(this.getAttribute('data-confirm-delete'))) return false"
-            th:href="@{'/deletePost/{id}'(id=${post.id})}">
+
+       th:href="@{'/deletePost/{id}'(id=${post.id})}" align="right">
+
       <button class="green-btn red-btn" type="button">Delete Post</button>
+
     </a>
-  </div>
+
+  </form>
+
+</div>
 </div>
 
 
