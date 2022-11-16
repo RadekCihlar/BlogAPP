@@ -5,7 +5,6 @@
 <div th:replace="/fragments/header :: header"></div>
 
 <div class="align-center">
-    <!--<div class="container">-->
     <div th:if="${param.error}">
         <p class="alert-red">Invalid username and/or password</p>
     </div>
@@ -20,17 +19,7 @@
         <div class="align-center">
             <input type="password" name="password" id="password" placeholder="Password" required="true"/>
         </div>
-        <!--        <div class="align-center">-->
-        <!--            <p>-->
-        <!--            <label for="remember-me">Remember Me</label>-->
-        <!--            </p>-->
-        <!--            <p>-->
-        <!--            <input type="checkbox" id="remember-me" name="remember-me">-->
-        <!--            </p>-->
-        <!--        </div>-->
-        <!--        <div class="align-center">-->
-        <!--            <input type="submit" class="green-btn blue-btn" value="Login"/>-->
-        <!--        </div>-->
+
 
         <div class="align-center">
             <button class="green-btn" type="submit" value="Login">Login</button>

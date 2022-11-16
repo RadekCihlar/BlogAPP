@@ -65,7 +65,6 @@ public class User implements UserDetails {
         this.authority = authority;
     }
 
-
     public User() {
     }
 

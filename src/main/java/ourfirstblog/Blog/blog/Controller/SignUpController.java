@@ -2,7 +2,6 @@ package ourfirstblog.Blog.blog.Controller;
 
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,7 +16,6 @@ import ourfirstblog.Blog.blog.Service.UserService;
 
 import javax.management.relation.RoleNotFoundException;
 import javax.validation.Valid;
-import java.util.Collection;
 import java.util.Collections;
 
 @Controller
@@ -39,7 +37,10 @@ public class SignUpController {
     }
 
     @PostMapping("/register")
-    public String registerNewUser(@Valid @ModelAttribute User user, BindingResult bindingResult, SessionStatus sessionStatus) throws RoleNotFoundException {
+    public String registerNewUser(@Valid @ModelAttribute User user,
+                                  BindingResult bindingResult,
+                                  SessionStatus sessionStatus) throws RoleNotFoundException {
+
         System.err.println("newUser: " + user);
 
         if (userService.findByUsername(user.getUsername()).isPresent()) {

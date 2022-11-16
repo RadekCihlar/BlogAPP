@@ -25,7 +25,8 @@ public class UserController {
 
 
     @GetMapping("/users")
-    public String showUsers(HttpServletRequest request,Model model){
+    public String showUsers(HttpServletRequest request,
+                            Model model){
 
         if (request.isUserInRole("ADMIN")){
 
@@ -38,7 +39,9 @@ public class UserController {
     }
 
     @GetMapping("/userUpdate/{id}")
-    public String showFormForUpdate(@PathVariable(value = "id") long id,HttpServletRequest request, Model model){
+    public String showFormForUpdate(@PathVariable(value = "id") long id,
+                                    HttpServletRequest request,
+                                    Model model){
         if (request.isUserInRole("ADMIN")){
 
             User user = userService.getUserByID(id);
@@ -53,7 +56,9 @@ public class UserController {
     }
 
     @PostMapping("/saveUser")
-    public String saveEmployee(@Valid @ModelAttribute User user,HttpServletRequest request, Model model){
+    public String saveEmployee(@Valid @ModelAttribute User user,
+                               HttpServletRequest request,
+                               Model model){
 
         model.addAttribute("authority", authorityService.getAllAuthorities());
 

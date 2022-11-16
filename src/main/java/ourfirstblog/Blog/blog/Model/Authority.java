@@ -16,7 +16,6 @@ public class Authority implements GrantedAuthority {
     @Column(name = "id", nullable = false)
     private Long id;
 
-
     @Column(name = "authority", nullable = false)
     @NotNull
     private String authority;

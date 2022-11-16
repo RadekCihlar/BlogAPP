@@ -36,7 +36,9 @@ public class CommentController {
 
     @Secured({"ROLE_USER", "ROLE_ADMIN"})
     @GetMapping("/comment/{id}")
-    public String showComment(@PathVariable Long id, Model model, Principal principal) {
+    public String showComment(@PathVariable Long id,
+                              Model model,
+                              Principal principal) {
 
         String authUsername = "GuestUser";
         if (principal != null) {
@@ -61,7 +63,10 @@ public class CommentController {
     }
     @Secured({"ROLE_USER", "ROLE_ADMIN"})
     @PostMapping("/comment")
-    public String validateComment(@Valid @ModelAttribute Comment comment, BindingResult bindingResult, SessionStatus sessionStatus) {
+    public String validateComment(@Valid @ModelAttribute Comment comment,
+                                  BindingResult bindingResult,
+                                  SessionStatus sessionStatus) {
+
         System.err.println("POST comment: " + comment); // for testing debugging purposes
 
         if (bindingResult.hasErrors()) {

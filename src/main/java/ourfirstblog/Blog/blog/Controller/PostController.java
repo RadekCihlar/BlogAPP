@@ -30,7 +30,9 @@ public class PostController {
     }
 
     @GetMapping("/post/{id}")
-    public String getPost(@PathVariable Long id, Model model, Principal principal) {
+    public String getPost(@PathVariable Long id,
+                          Model model,
+                          Principal principal) {
         String authUsername = "GuestUser";
 
         if(principal == null){
@@ -63,7 +65,8 @@ public class PostController {
 
     @Secured({"ROLE_USER", "ROLE_ADMIN"})
     @GetMapping("/createNewPost")
-    public String createNewPost(Model model, Principal principal) {
+    public String createNewPost(Model model,
+                                Principal principal) {
 
         String authUsername = "GuestUser";
         if (principal != null) {
@@ -84,7 +87,9 @@ public class PostController {
 
     @Secured({"ROLE_USER", "ROLE_ADMIN"})
     @PostMapping("/createNewPost")
-    public String createNewPost(@Valid @ModelAttribute Post post, BindingResult bindingResult, SessionStatus sessionStatus) {
+    public String createNewPost(@Valid @ModelAttribute Post post,
+                                BindingResult bindingResult,
+                                SessionStatus sessionStatus) {
         System.err.println("POST post: " + post); // for testing debugging purposes
 
         if (bindingResult.hasErrors()) {
@@ -100,7 +105,10 @@ public class PostController {
 
     @Secured({"ROLE_USER", "ROLE_ADMIN"})
     @GetMapping("editPost/{id}")
-    public String editPost(@PathVariable Long id, Model model, HttpServletRequest request, Principal principal) {
+    public String editPost(@PathVariable Long id,
+                           Model model,
+                           HttpServletRequest request,
+                           Principal principal) {
         String authUsername = "GuestUser";
 
         if (principal != null) {

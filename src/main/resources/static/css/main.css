@@ -171,6 +171,9 @@ a:hover {
 .blue-btn {
     background-color: #00B2CE;
 }
+.purple-btn{
+    background-color: #AA54A1;
+}
 
 input, select {
     width: 20%;
